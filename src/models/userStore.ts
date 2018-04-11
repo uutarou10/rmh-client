@@ -1,4 +1,4 @@
-import User from "./user";
+import User from './user';
 
 export default class UserStore {
   private users: User[];
@@ -41,12 +41,12 @@ export default class UserStore {
   countOfNormalUsers(): number {
     return this.users.filter((user) => {
       return !user.isAdmin;
-    }).length
+    }).length;
   }
 
   countOfAdminUsers(): number {
     return this.users.filter((user) => {
       return user.isAdmin;
-    }).length
+    }).length;
   }
 }

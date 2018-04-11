@@ -18,13 +18,13 @@ export default class Queue {
     if (this.isEnqueuedJobByUser(job.user)) {
       return false;
     } else {
-      job.id = (this.lastId += 1)
+      job.id = (this.lastId += 1);
       this.queue.push(job);
       return true;
     }
   }
 
-  cancel(user: User):boolean {
+  cancel(user: User): boolean {
     let isRemoved = false;
     this.queue = this.queue.filter((job) => {
       if (job.user) {
@@ -37,12 +37,12 @@ export default class Queue {
       } else {
         return true;
       }
-    })
+    });
 
     return isRemoved;
   }
 
-  isEnqueuedJobByUser(user: User):boolean {
+  isEnqueuedJobByUser(user: User): boolean {
     return this.queue.filter((job) => {
       if (!job.user) {
         throw Error;

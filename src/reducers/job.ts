@@ -1,12 +1,12 @@
-import { Action } from "redux";
-import Job from '../models/job'
+import { Action } from 'redux';
+import Job from '../models/job';
 
 interface State {
-  queue: Job[],
-  isRequestingJob: boolean,
-  requestingJob?: Job,
-  isRequestingCancel: boolean,
-  isInOperation: boolean
+  queue: Job[];
+  isRequestingJob: boolean;
+  requestingJob?: Job;
+  isRequestingCancel: boolean;
+  isInOperation: boolean;
 }
 
 export default (state: State = {
