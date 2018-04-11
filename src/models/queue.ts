@@ -1,5 +1,5 @@
-import Job from "./job";
-import User from "./user";
+import Job from './job';
+import User from './user';
 
 export default class Queue {
   queue: Job[]; 
@@ -10,7 +10,7 @@ export default class Queue {
     this.lastId = 0;
   }
 
-  enqueue(job: Job):boolean {
+  enqueue(job: Job): boolean {
     if (!job.user) {
       return false;
     }

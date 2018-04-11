@@ -12,7 +12,7 @@ interface State {
 export default (state: State = {
   queue: [],
   isRequestingJob: false,
-  requestingJob: null,
+  requestingJob: undefined,
   isRequestingCancel: false,
   isInOperation: false
 }, action: Action): State => {

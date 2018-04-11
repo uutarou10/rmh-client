@@ -1,5 +1,5 @@
-import User from "./user";
-import { JobType } from "./jobType";
+import User from './user';
+import { JobType } from './jobType';
 
 export default class Job {
   constructor (
