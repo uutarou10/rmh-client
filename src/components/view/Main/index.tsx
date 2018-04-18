@@ -1,19 +1,14 @@
 import * as React from 'react';
+import Header from '../../Header';
+import RequestForm from './RequestForm';
 
-// class Main extends React.Component {
-//   constructor() {
-//     super();
-//   }
-
-//   render() {
-//     return (
-//       <p>hello</p>
-//     );
-//   }
-// }
-
-export default () => {
+const Main =  () => {
   return (
-    <div>hello</div>
+    <React.Fragment>
+      <Header />
+      <RequestForm />
+    </React.Fragment>
   );
 };
+
+export default Main;
