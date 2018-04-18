@@ -8,6 +8,9 @@ import Router from './router';
 import { Container } from 'semantic-ui-react';
 // import { Route } from 'react-router';
 // import Main from './components/view/Main/index';
+import Api from './utils/api';
+
+export const api = new Api();
 
 class App extends React.Component {
   render() {
