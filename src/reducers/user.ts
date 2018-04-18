@@ -8,7 +8,7 @@ interface State {
 
 export default (state: State = {
   me: undefined,
-  isJoined: false
+  isJoined: false 
 }, action: Action): State => {
   switch(action.type) {
     default:
