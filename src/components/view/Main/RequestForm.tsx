@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Form, Radio } from 'semantic-ui-react';
+import { Form, Radio, Button } from 'semantic-ui-react';
 import { JobType } from '../../../models/jobType';
 
 interface PropsType {
-
+  tasks: any[]
 }
 
 interface StateType {
@@ -55,15 +55,74 @@ class RequestForm extends React.Component<PropsType, StateType> {
           </Form.Field>
         </Form>
         {this.state.selectedType === JobType.Confirmation ? (
-          <h3>課題チェック</h3>
+          <React.Fragment>
+            <h3>課題チェック</h3>
+            <Form>
+              <Form.Field>
+                <Form.Select
+                  label='どの課題かな?'
+                  options={this.props.tasks}
+                />
+              </Form.Field>
+              <Form.Field>
+                <SubmitButton />
+              </Form.Field>
+            </Form>
+          </React.Fragment>
         ) : this.state.selectedType === JobType.Question ? (
-          <h3>質問</h3>
+          <React.Fragment>
+            <h3>質問</h3>
+            <Form>
+              <Form.Field>
+                <Form.TextArea
+                  label='聞きたいこと(Optional)'
+                />
+              </Form.Field>
+              <Form.Field>
+                <SubmitButton />
+              </Form.Field>
+            </Form>
+          </React.Fragment>
         ) : (
-          <h3>その他</h3>
+          <React.Fragment>
+            <h3>その他</h3>
+            <Form>
+              <Form.Field>
+                <Form.TextArea
+                  label='言いたいこと(Optional)'
+                />
+              </Form.Field>
+              <Form.Field>
+                <SubmitButton />
+              </Form.Field>
+            </Form>
+          </React.Fragment>
         )}
       </React.Fragment>
     );
   }
+}
+
+interface SubmitButtonProps {
+  isRequesting: boolean,
+  isDisable: boolean,
+  onClickHandler: Function
+}
+
+const SubmitButton = (props: SubmitButtonProps) => {
+
+  return (
+    props.isRequesting ? (
+      <p>hoge</p>
+    ) : (
+      <Button
+        primary
+        fluid
+        disabled={props.isDisable}
+        onClick={props.onClickHandler}
+      >送信</Button>
+    )
+  )
 }
 
 
